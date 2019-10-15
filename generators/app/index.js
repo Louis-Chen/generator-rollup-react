@@ -32,7 +32,7 @@ module.exports = class extends Generator {
 	}
 
 	writing() {
-		this.fs.copy(this.templatePath(this.tmpDir + '/'), this.destinationPath(this.destinationRoot(`./${this.name}`)), {
+		this.fs.copy(this.templatePath(this.tmpDir + '/'), this.destinationPath(this.destinationRoot(this.name)), {
 			globOptions: { dot: true }
 		})
 
