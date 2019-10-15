@@ -1,0 +1,29 @@
+{
+	"name": "generator-rollup-react",
+	"version": "0.1.0",
+	"description": "create react rollup kit",
+	"main": "generators/index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Louis-Chen/generator-rollup-react.git"
+	},
+	"dependencies": {
+		"chalk": "^2.4.1",
+		"mkdirp": "^0.5.1",
+		"yeoman-generator": "^3.1.1",
+		"yosay": "^2.0.2"
+	},
+	"keywords": [
+		"react",
+		"create-react-app",
+		"styled-components",
+		"jest",
+		"yeoman-generator"
+	],
+	"author": "Louis Chen",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Louis-Chen/generator-rollup-react/issues"
+	},
+	"homepage": "https://github.com/Louis-Chen/generator-rollup-react#readme"
+}
