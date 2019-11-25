@@ -1,12 +1,8 @@
 # generator-rollup-react
-> this is for bundle submodule js startkit
+> this is for small project  js startkit
 
-- For submodule
-- Just a bundle.js
-- All in One
 
 ## How to Use
-
 
 ```
 npm install -g yo
