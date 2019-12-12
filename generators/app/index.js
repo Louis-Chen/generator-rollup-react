@@ -2,8 +2,9 @@
 const Generator = require('yeoman-generator')
 const chalk = require('chalk')
 const yosay = require('yosay')
-const mkdirp = require('mkdirp')
 
+
+const { version } = require('../../package.json')
 module.exports = class extends Generator {
 	constructor(args, opts) {
 		super(args, opts)
@@ -19,7 +20,7 @@ module.exports = class extends Generator {
 				type: 'input',
 				name: 'projectName',
 				message: 'Your project name',
-				default: 'react-rollup'
+				default: 'react-rollup',
 			}
 		]
 
@@ -36,20 +37,11 @@ module.exports = class extends Generator {
 			globOptions: { dot: true, ignore: ['**/node_modules', '**/package-lock.json'] }
 		})
 
-		this.fs.copyTpl(this.templatePath(this.tmpDir + '/_package.json'), this.destinationPath('package.json'), {
-			name: this.props.projectName.replace(/\s+/g, '-')
+		this.fs.copyTpl(this.templatePath(this.tmpDir + '/package.json'), this.destinationPath('package.json'), {
+			name: this.props.projectName.replace(/\s+/g, '-'),
+			version:version
 		})
-
-		this.fs.copy(this.templatePath(this.tmpDir + '/_gitignore'), this.destinationPath('.gitignore'))
-
-		this.removeFiles()
 	}
-
-	removeFiles() {
-		this.fs.delete(this.destinationRoot() + '/_package.json')
-		this.fs.delete(this.destinationRoot() + '/_gitignore')
-	}
-
 	install() {
 		this.installDependencies({
 			bower: false
