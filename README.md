@@ -9,7 +9,7 @@ npm install -g yo
 ```
 
 ```
-npm i generator-rollup-react
+npm i -g generator-rollup-react
 ```
 
 ```
